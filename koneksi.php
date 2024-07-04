@@ -4,8 +4,8 @@
 
   // Database connection
   $dbhost = "localhost";
-  $dbuser = "root";
-  $dbpass = "";
+  $dbuser = "app";
+  $dbpass = "serverDB9090";
   $dbname = "sicuti";
 
   $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
