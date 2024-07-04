@@ -187,7 +187,7 @@ $gabung = implode(",", $arrayBulan);
 				datasets: [{
 					label: 'Cuti Diterima',
 					data: [<?= $gabung; ?>],
-					backgroundColor: '#A94442',
+					backgroundColor: '#24115a',
 					borderWidth: 1
 				}]
 				},
