@@ -33,7 +33,7 @@ $gabung = implode(",", $arrayBulan);
 							<div class="panel panel-default">
 								<div class="panel-body">
 								<h2 align="center">Selamat Datang !</h2>
-								<center><img src="foto/admin.PNG" width="120px"></center>
+								<center><img src="foto/admin.png" width="120px"></center>
 								<hr/>
 								</div>
 							</div><!-- /.panel -->

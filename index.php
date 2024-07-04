@@ -51,7 +51,7 @@ include 'koneksi.php';
 	<![endif]-->
 </head>
 
-<body style="background-color: #f1f4f7; background-image: url('latar.PNG')" onload="noBack()" onpageshow="if(event.persisted) noBack()">
+<body style="background-color: #f1f4f7; background-image: url('latar.png')" onload="noBack()" onpageshow="if(event.persisted) noBack()">
 
   <section id="main-wrapper" style="margin-top: 120px">
     <div class="container-fluid">
