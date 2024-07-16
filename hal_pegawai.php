@@ -32,7 +32,7 @@ $gabung = implode(",", $arrayBulan);
 						<form class="form-horizontal">
 							<div class="panel panel-default">
 								<div class="panel-body">
-								<h2 align="center">Selamat Siang !</h2>
+								<h2 align="center">Selamat Datang !</h2>
 								<center><img src="foto/admin.png" width="120px"></center>
 								<hr/>
 								</div>
