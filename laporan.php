@@ -97,12 +97,12 @@ include("dist/function/format_rupiah.php");
     </style>
 </head>
 <body>
-    <div class="container">
+    <!-- <div class="container">
         <div class="card tahun23">
           
             <p>Tahun 2023</p>
             <a href="tahun2023.php" class="detail">Lihat Detail</a>
-        </div>
+        </div> -->
         <div class="card tahun24">
             
             <p>Tahun 2024</p>
