@@ -20,7 +20,7 @@ if ($hasil !== null) {
 }
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -44,26 +44,26 @@ if ($hasil !== null) {
             text-align: center; /* Untuk menengahkan teks */
         }
     </style>
-</head>
-<body>
+</head> -->
 
 <!-- Page Content -->
 <div id="page-wrapper">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Data Cuti Yang Diterima</h1>
-            </div><!-- /.col-lg-12 -->
-        </div><!-- /.row -->
+     <div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Data Cuti Yang Diterima</h1>
+			</div><!-- /.col-lg-12 -->
+		</div><!-- /.row -->
 
         <div class="row">
             <div class="col-lg-12"><?php include("layout_alert.php"); ?></div>
         </div>
 
+
         <div class="row">
-            <div class="col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-body">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-body">
 
                     <?php
                         $Sql = "SELECT cuti.*, pegawai.*, jeniscuti.nama_jenis
@@ -74,16 +74,12 @@ if ($hasil !== null) {
 
                         $Qry = mysqli_query($conn, $Sql);
                     ?>
-
-                        <div class="table-responsive">
-							
                             <table class="table table-striped table-bordered table-hover" id="tabel-data">
-                               
 							<thead>
                                     <tr>
                                         <th width="1%">No</th>
-                                        <th width="1%">No Cuti</th>
-                                        <th width="10%">Id Pegawai</th>
+                                        <th width="10%">No Cuti</th>
+                                        <th width="15%">Id Pegawai</th>
                                         <th width="15%">Nama Pegawai</th>
                                         <th width="15%">Nama Jenis Cuti</th>
                                         <th width="5%">Tanggal Mulai</th>
@@ -92,7 +88,9 @@ if ($hasil !== null) {
                                         <th width="5%">Lama Cuti</th>
                                         <th width="5%">Keperluan</th>
                                         <th width="5%">Status</th>
-                                        <th colspan="3" width="1%">Opsi</th>
+                                        <th width="1%">Unduh</th>
+                                        <th width="1%">File</th>
+                                        <th width="1%">Opsi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -129,7 +127,6 @@ if ($hasil !== null) {
                                     ?>
                                 </tbody>
                             </table>
-                        </div>
                     </div><!-- /.panel-body -->
                     <!-- Large modal -->
                     <div class="modal fade bs-example-modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -148,38 +145,37 @@ if ($hasil !== null) {
 </div><!-- /#page-wrapper -->
 
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#tabel-data').DataTable({
-            "responsive": true,
-            "processing": true,
-            "columnDefs": [{
-                "orderable": false,
-                "targets": []
-            }]
-        });
+	
+	$(document).ready(function() {
+		$('#tabel-data').DataTable({
+			"responsive": true,
+			"processing": true,
+			"columnDefs": [{
+				"orderable": false,
+				"targets": []
+			}]
+		});
 
-        $('#tabel-data').parent().addClass("table-responsive");
-    });
+		$('#tabel-data').parent().addClass("table-responsive");
+	});
 </script>
 <script>
-    var app = {
-        code: '0'
-    };
+	var app = {
+		code: '0'
+	};
 
-    $('[data-load-code]').on('click', function(e) {
-        e.preventDefault();
-        var $this = $(this);
-        var code = $this.data('load-code');
-        if (code) {
-            $($this.data('remote-target')).load('cuti_detail.php?code=' + code);
-            app.code = code;
-        }
-    });
+	$('[data-load-code]').on('click', function(e) {
+		e.preventDefault();
+		var $this = $(this);
+		var code = $this.data('load-code');
+		if (code) {
+			$($this.data('remote-target')).load('cuti_detail.php?code=' + code);
+			app.code = code;
+
+		}
+	});
 </script>
-
 <?php
 include("layout_bottom.php");
 ?>
 
-</body>
-</html>
