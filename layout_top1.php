@@ -105,14 +105,14 @@ $tahun = date("Y");
                                 echo '<li><a href="cutiwaiting.php">Menunggu Persetujuan </a></li>';
                             }
                             if ($pagedesc == "Ditolak") {
-                                echo '<li><a href="cutiditolak.php" class="active">Di Tolak</a></li>';
+                                echo '<li><a href="cutiditolak.php" class="active">Ditolak</a></li>';
                             } else {
-                                echo '<li><a href="cutiditolak.php">Di Tolak </a></li>';
+                                echo '<li><a href="cutiditolak.php">Ditolak </a></li>';
                             }
                             if ($pagedesc == "Disetujui") {
-                                echo '<li><a href="cutisetuju.php" class="active">Di Terima</a></li>';
+                                echo '<li><a href="cutisetuju.php" class="active">DiSetujui</a></li>';
                             } else {
-                                echo '<li><a href="cutisetuju.php">Di Terima </a></li>';
+                                echo '<li><a href="cutisetuju.php">Disetujui </a></li>';
                             }
                             ?>
                         </ul><!-- /.nav-second-level -->
