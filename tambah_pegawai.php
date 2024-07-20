@@ -18,17 +18,7 @@ include 'koneksi.php';
 
     <title>Form Tambah Menu</title>
     <link href="libs/images/logopemko.JPG" rel="icon" type="images/x-icon">
-    <style>
-        /* Gaya CSS untuk tombol kembali */
-        .pink-button {
-            background-color: green;
-            color: white;
-            padding: 1px 13px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+    
   </head>
   
   <body>
