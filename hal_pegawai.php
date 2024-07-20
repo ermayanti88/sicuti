@@ -56,7 +56,7 @@ $gabung = implode(",", $arrayBulan);
 								</div>
 							</div>
 
-							<a href="cutisetuju.php">
+							<a href="cutiwaiting.php">
 								<div class="panel-footer">
 									<span class="pull-left">Lihat Rincian</span>
 									<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -81,7 +81,7 @@ $gabung = implode(",", $arrayBulan);
 									</div>
 								</div>
 							</div>
-							<a href="cutiwaiting.php">
+							<a href="cutisetuju.php">
 								<div class="panel-footer">
 									<span class="pull-left">Lihat Rincian</span>
 									<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
