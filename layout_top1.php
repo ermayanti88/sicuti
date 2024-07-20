@@ -124,13 +124,13 @@ $tahun = date("Y");
                         echo '<li>';
                     }
                     ?>
-                    <a href="#"><i class="fa fa-sign-out fa-fw"></i>&nbsp;Logout<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-sign-out fa-fw"></i>&nbsp;Keluar<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <?php
                         if ($pagedesc == "Logout") {
-                            echo '<li><a href="logout.php" class="active">Logout</a></li>';
+                            echo '<li><a href="logout.php" class="active">Keluar</a></li>';
                         } else {
-                            echo '<li><a href="logout.php">Logout</a></li>';
+                            echo '<li><a href="logout.php">Keluar</a></li>';
                         }
                         ?>
                     </ul><!-- /.nav-second-level -->
