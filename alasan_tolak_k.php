@@ -19,10 +19,13 @@ $id = $_GET['id'];
 
 if ($id !== null) 
 {
-    $query = mysqli_query($conn, "SELECT * FROM cuti WHERE id_cuti = ". $id );
+    // Query untuk mengambil data cuti dan data pegawai
+    $query = mysqli_query($conn, "SELECT cuti.*, pegawai.nama_pegawai, pegawai.id_pegawai 
+                                  FROM cuti 
+                                  INNER JOIN pegawai ON cuti.id_pegawai = pegawai.id_pegawai 
+                                  WHERE cuti.id_cuti = " . $id);
 		  
-    $pegawai  = mysqli_fetch_array($query);
-    // echo var_dump($pegawai);die;
+    $pegawai = mysqli_fetch_array($query);
 }
 // echo var_dump($hasil);die;
 
