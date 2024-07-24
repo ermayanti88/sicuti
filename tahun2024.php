@@ -23,10 +23,10 @@ function hitung_sisa_cuti($conn, $id_pegawai, $tahun) {
     $cuti_tahunan = 12;
 
     // Hitung total cuti yang telah diambil di tahun ini
-    $sql = "SELECT SUM(lama_cuti) as total_cuti FROM cuti WHERE id_pegawai = '$id_pegawai' AND YEAR(tanggal_mulai) = '$tahun' AND status = 'Verifikasi Kadis'";
+    $sql = "SELECT SUM(lama_cuti) as total_cuti FROM cuti WHERE id_pegawai = '$id_pegawai' AND YEAR(tanggal_mulai) = '$tahun' AND keterangan = 'Verifikasi Kadis'";
     $result = mysqli_query($conn, $sql);
     $data = mysqli_fetch_array($result);
-    $total_cuti_diambil = $data['total_cuti'];
+    $total_cuti_diambil = $data['total_cuti'] ?: 0; // Pastikan menggunakan default value 0 jika null
 
     // Hitung sisa cuti
     $sisa_cuti = $cuti_tahunan - $total_cuti_diambil;
@@ -110,16 +110,16 @@ $i = 1;
 while ($data = mysqli_fetch_array($Qry)) {
     $id_pegawai = $data['id_pegawai'];
 
-    // Query untuk menghitung total cuti yang sudah diambil oleh pegawai
-    $query_total_cuti = mysqli_query($conn, "SELECT SUM(lama_cuti) AS total_cuti FROM cuti WHERE id_pegawai = $id_pegawai");
+    // Query untuk menghitung total cuti yang sudah diambil oleh pegawai di tahun ini
+    $query_total_cuti = mysqli_query($conn, "SELECT SUM(lama_cuti) AS total_cuti FROM cuti WHERE id_pegawai = $id_pegawai AND YEAR(tanggal_mulai) = '$tahun_sekarang' AND keterangan = 'Verifikasi Kadis'");
     $result_total_cuti = mysqli_fetch_array($query_total_cuti);
     $total_cuti_diambil = $result_total_cuti['total_cuti'] ?: 0;
 
     $sisa_cuti = hitung_sisa_cuti($conn, $id_pegawai, $tahun_sekarang);
 
     // Tentukan kalimat keterangan berdasarkan sisa cuti
-    if (12-$total_cuti_diambil > 0) {
-        $keterangan = "Masih tersisa " .(12 - $total_cuti_diambil)  . " hari cuti untuk tahun ini.";
+    if ($sisa_cuti > 0) {
+        $keterangan = "Masih tersisa " . $sisa_cuti . " hari cuti untuk tahun ini.";
     } else {
         $keterangan = "Tidak tersisa cuti untuk tahun ini.";
     }
@@ -132,17 +132,13 @@ while ($data = mysqli_fetch_array($Qry)) {
     echo '<td class="text-center">12</td>'; // Cuti tahunan tetap 12
     echo '<td class="text-center">12</td>'; // Cuti tahunan tetap 12
     echo '<td class="text-center">' . $total_cuti_diambil . '</td>'; // Jumlah lama cuti yang sudah diambil per orang
-    echo '<td class="text-center">' . (12 - $total_cuti_diambil) . '</td>'; // Rekapan cuti (12 - jumlah lama cuti yang sudah diambil per orang)
+    echo '<td class="text-center">' . $sisa_cuti . '</td>'; // Rekapan cuti (12 - jumlah lama cuti yang sudah diambil per orang)
     echo '<td class="text-center">' . $keterangan . '</td>'; // Keterangan berdasarkan sisa cuti
     echo '</tr>';
     $i++;
 }
 ?>
 
-
-
-                             
-                             
                                 </tbody>
                             </table>
                         </div>
