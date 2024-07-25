@@ -68,7 +68,7 @@ include("dist/function/format_rupiah.php");
                                 <button type="button" id="searchButton">Cari</button>
                             </div>
                         </form>
-
+<br>
                         <table class="table table-bordered" id="example">
                             <thead class="thead-light" style="background-color: #EEF0F0; color: black;">
                                 <tr>
