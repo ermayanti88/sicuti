@@ -89,8 +89,8 @@ $kembali= $tanggalKembali->format('Y-m-d');
 
 
 // Ganti '$id' menjadi '$no_cuti' di bawah, dan sesuaikan '$kembali'
-$sql = "INSERT INTO `cuti`(`id_pegawai`, `id_jeniscuti`, `nama_pegawai`, `tanggal_mulai`, `tanggal_selesai`, `tanggal_kembali`, `lama_cuti`, `keperluan`, `status`)
-VALUES('$id','$idjc','$nama','$mulai','$akhir','$kembali','$lamcut','$keperluan', '$status')";
+$sql = "INSERT INTO `cuti`(`id_pegawai`, `id_jeniscuti`, `tanggal_mulai`, `tanggal_selesai`, `tanggal_kembali`, `lama_cuti`, `keperluan`, `status`)
+VALUES('$id','$idjc','$mulai','$akhir','$kembali','$lamcut','$keperluan', '$status')";
 $query = mysqli_query($conn, $sql);
 
 if ($query) {
