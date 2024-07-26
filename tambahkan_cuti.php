@@ -8,6 +8,8 @@ $id = $_POST['id_pegawai'];
 $datax = mysqli_query($conn, "select * from pegawai where id_pegawai='$id'");
 $result = mysqli_fetch_array($datax);
 $nama = $result['nama_pegawai'];
+var_dump($nama);
+die;
 
 
 
